@@ -1,0 +1,176 @@
+/* Custom styles for Inter font and general aesthetics */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f2f5; /* Light gray background */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px; /* Add some padding at the bottom */
+    box-sizing: border-box;
+}
+/* Styles for the main content area, now without box styling */
+main.main-content-area {
+    width: 100%;
+    max-width: 1200px; /* Wider container to match screenshot */
+    box-sizing: border-box;
+    margin-top: 20px; /* Space from top */
+}
+/* Dropdown menu styles (kept as functional divs) */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    z-index: 10;
+    min-width: 160px;
+    padding: 0.5rem 0;
+    top: 100%; /* Position below the button */
+    left: 0;
+    margin-top: 0.5rem;
+}
+.dropdown-menu.show {
+    display: block;
+}
+.dropdown-menu a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #333;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+.dropdown-menu a:hover {
+    background-color: #f3f4f6;
+}
+/* Table styles */
+.trends-table th, .trends-table td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #edf2f7; /* Light border for rows */
+}
+.trends-table th {
+    font-weight: 600;
+    color: #64748b; /* Slate gray for headers */
+    font-size: 0.9rem;
+    background-color: #f8fafc; /* Very light background for header */
+}
+.trends-table tbody tr:last-child td {
+    border-bottom: none; /* No border for the last row */
+}
+.trends-table tbody tr:hover {
+    background-color: #fbfdfe; /* Subtle hover effect */
+}
+.trend-breakdown-link {
+    color: #1a73e8; /* Google blue */
+    text-decoration: none;
+    font-size: 0.85rem;
+    margin-right: 0.5rem;
+    white-space: nowrap; /* Prevent wrapping for individual links */
+}
+.trend-breakdown-link:hover {
+    text-decoration: underline;
+}
+/* Removed clickable-keyword styling as keywords are no longer directly clickable to graph */
+
+.loading-spinner {
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #1a73e8; /* Google blue spinner */
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    margin-left: 0.5rem;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+/* Custom checkbox style to match Google's */
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #9ca3af; /* Gray border */
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+}
+input[type="checkbox"]:checked {
+    background-color: #1a73e8; /* Google blue background */
+    border-color: #1a73e8;
+}
+input[type="checkbox"]:checked::after {
+    content: '✔'; /* Checkmark symbol */
+    color: white;
+    font-size: 12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+input[type="checkbox"]:focus {
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5); /* Focus ring */
+}
+/* Table scroll area - no scrollbar */
+.table-scroll-area {
+    border: 1px solid #e0e0e0; /* Kept border for table separation */
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+}
+.table-scroll-area table {
+    width: 100%;
+    border-collapse: collapse;
+}
+/* Ensure table header sticks */
+.trends-table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: #f8fafc;
+}
+/* Graph container styling */
+.graph-container {
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 1.5rem;
+    margin-top: 1rem;
+    height: 400px; /* Fixed height for the graph container */
+    width: 100%; /* Ensure it takes full width of its parent */
+    display: flex; /* Use flexbox for button alignment */
+    flex-direction: column;
+}
+.graph-container h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+/* Ensure canvas fills its parent height */
+#trendChart {
+    flex-grow: 1; /* Allow canvas to grow and take available space */
+    max-height: calc(100% - 2.5rem - 2.5rem); /* Adjust for h3, padding, and button */
+}
+.back-button {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem; /* Reduced padding for smaller size */
+    background-color: #1a73e8; /* Google blue */
+    color: white;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    width: fit-content; /* Make button fit content */
+    margin-right: auto; /* Push to the left */
+    font-size: 0.9rem; /* Smaller font size */
+}
+.back-button:hover {
+    background-color: #155bb5; /* Darker blue on hover */
+}

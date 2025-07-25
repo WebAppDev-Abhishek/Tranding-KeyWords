@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project README</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            padding: 30px;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            color: #1a202c;
+        }
+        h1 { font-size: 2.5em; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.3em; }
+        h2 { font-size: 2em; border-bottom: 1px solid #e2e8f0; padding-bottom: 0.3em; }
+        h3 { font-size: 1.5em; }
+        p { margin-bottom: 1em; }
+        ul, ol {
+            margin-bottom: 1em;
+            padding-left: 20px;
+        }
+        ul li { list-style-type: disc; }
+        ol li { list-style-type: decimal; }
+        code {
+            background-color: #f3f4f6;
+            padding: 0.2em 0.4em;
+            border-radius: 4px;
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background-color: #2d3748;
+            color: #e2e8f0;
+            padding: 1em;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            margin-bottom: 1em;
+        }
+        pre code {
+            background-color: transparent;
+            padding: 0;
+            color: inherit;
+            font-size: 1em;
+        }
+        a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Google Trends Clone (Node.js Backend &amp; Frontend)</h1>
+        <p>This project is a simplified clone of the Google Trends dashboard, demonstrating real-time trending keyword display and historical search interest visualization. It features a Node.js Express backend to serve static files and provide API endpoints for data, and a pure HTML, CSS (Tailwind CSS), and JavaScript frontend for the user interface.</p>
+        <p><strong>Note:</strong> The trending and historical data are currently <strong>simulated</strong> on the backend. To get actual real-time data from the internet, you would need to integrate with external APIs (e.g., Google Trends API, Twitter API) and handle their authentication and rate limits.</p>
+
+        <h2>Features</h2>
+        <ul>
+            <li><strong>Trending Keywords List:</strong> Displays a simulated list of top trending keywords.</li>
+            <li><strong>Search Functionality:</strong> Filter the trending keywords list, or if a keyword is not trending, display its simulated historical search interest.</li>
+            <li><strong>Historical Trend Graph:</strong> Visualizes the simulated historical search interest for a given keyword using Chart.js.</li>
+            <li><strong>"Back to Trending Keywords" Button:</strong> Easily switch back from the graph view to the trending list.</li>
+            <li><strong>Responsive Design:</strong> Built with Tailwind CSS for a mobile-first approach.</li>
+            <li><strong>Structured Project:</strong> Separated HTML, CSS, and JavaScript files for better organization.</li>
+            <li><strong>Node.js Backend:</strong> Serves the frontend assets and provides API endpoints for data.</li>
+        </ul>
+
+        <h2>Project Structure</h2>
+        <pre><code>google-trends-clone/
+├── index.html          # Main HTML file for the frontend
+├── style.css           # Custom CSS for styling
+├── script.js           # Frontend JavaScript logic
+└── server.js           # Node.js Express backend server
+└── package.json        # Node.js project configuration
+└── package-lock.json   # Node.js dependency lock file
+</code></pre>
+
+        <h2>Setup and Running the Project</h2>
+        <p>Follow these steps to get the project up and running on your local machine.</p>
+
+        <h3>Prerequisites</h3>
+        <p>Before you begin, ensure you have Node.js and npm (Node Package Manager) installed on your system.</p>
+        <ul>
+            <li><strong>Node.js &amp; npm:</strong> Download and install from <a href="https://nodejs.org/">nodejs.org</a>.</li>
+        </ul>
+
+        <h3>Installation</h3>
+        <ol>
+            <li><strong>Clone the Repository (or create the files manually):</strong><br>
+                If you're getting this from a Git repository, clone it:
+                <pre><code>git clone &lt;your-repository-url&gt;
+cd google-trends-clone
+</code></pre>
+                If you've received the files directly, create a folder (e.g., <code>google-trends-clone</code>) and place <code>index.html</code>, <code>style.css</code>, <code>script.js</code>, and <code>server.js</code> inside it. Then navigate into that folder:
+                <pre><code>cd google-trends-clone
+</code></pre>
+            </li>
+            <li><strong>Initialize Node.js Project:</strong><br>
+                If you haven't already, initialize a Node.js project. This will create a <code>package.json</code> file.
+                <pre><code>npm init -y
+</code></pre>
+            </li>
+            <li><strong>Install Dependencies:</strong><br>
+                Install the necessary Node.js packages (<code>express</code> for the web server and <code>cors</code> for cross-origin requests).
+                <pre><code>npm install express cors
+</code></pre>
+            </li>
+        </ol>
+
+        <h3>Running the Server</h3>
+        <ol>
+            <li><strong>Start the Node.js Server:</strong><br>
+                In your terminal, from the <code>google-trends-clone</code> directory, run:
+                <pre><code>node server.js
+</code></pre>
+                You should see output similar to this:
+                <pre><code>Server running on http://localhost:3000
+Open your browser and navigate to this address.
+</code></pre>
+            </li>
+        </ol>
+
+        <h3>Accessing the Application</h3>
+        <ol>
+            <li><strong>Open in Browser:</strong><br>
+                Open your web browser and navigate to the address displayed in the terminal, typically:
+                <pre><code>http://localhost:3000
+</code></pre>
+            </li>
+        </ol>
+
+        <h2>Usage</h2>
+        <ul>
+            <li><strong>Trending Keywords:</strong> The homepage will display a list of simulated trending keywords.</li>
+            <li><strong>Search:</strong> Use the search bar at the top to filter the trending keywords.</li>
+            <li><strong>Historical Graph:</strong> If you search for a keyword that is <strong>not</strong> in the current trending list, the application will switch to a graph view, showing a simulated historical trend for that word.</li>
+            <li><strong>Back Button:</strong> When viewing a historical graph, click the "Back to Trending Keywords" button to return to the main trending list.</li>
+        </ul>
+
+        <h2>Future Enhancements (Real-time Data)</h2>
+        <p>To make this application truly reflect real-time internet trends, you would need to replace the simulated data logic in <code>server.js</code> with actual API calls to external services. Here are some ideas:</p>
+        <ul>
+            <li><strong>Google Trends API:</strong> For official Google search trend data. (Requires API key and adherence to Google's API terms).</li>
+            <li><strong>Twitter API:</strong> To fetch trending hashtags or topics.</li>
+            <li><strong>News API:</strong> To get trending news headlines and extract keywords.</li>
+        </ul>
+        <p>Remember to handle API keys securely (e.g., using environment variables) and respect API rate limits.</p>
+    </div>
+</body>
+</html>

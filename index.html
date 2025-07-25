@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Trends Dashboard</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js CDN for graphing -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100">
+
+    <!-- Main Content Area -->
+    <main class="main-content-area">
+        <!-- Search and Info Bar -->
+        <form class="flex items-center mb-6">
+            <svg class="w-6 h-6 text-gray-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search trending keywords..."
+                class="flex-grow p-2 bg-transparent text-gray-800 text-lg outline-none border-b border-gray-300 focus:border-blue-500"
+            />
+            <span id="lastUpdated" class="text-gray-500 text-sm ml-4 whitespace-nowrap">
+                Trends (Updated Jul 25, 1:20 AM)
+            </span>
+            <div id="loadingIndicator" class="loading-spinner hidden ml-3"></div>
+        </form>
+
+        <!-- Trends Table -->
+        <div id="trendsTableContainer" class="table-scroll-area">
+            <table class="trends-table w-full">
+                <thead>
+                    <tr>
+                        <th class="w-12"><input type="checkbox" id="selectAllCheckbox"></th>
+                        <th class="w-1/3">Keyword</th>
+                        <th class="w-1/6">Search volume</th>
+                        <th class="w-1/6">Started</th>
+                        <th class="w-1/3">Trend breakdown</th>
+                    </tr>
+                </thead>
+                <tbody id="trendsTableBody">
+                    <!-- Dynamic rows will be inserted here -->
+                    <tr><td colspan="5" class="text-center text-gray-500 py-8">Loading trending data...</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Historical Graph Container -->
+        <div id="historicalGraphContainer" class="graph-container" style="display: none;">
+            <h3 id="graphTitle">Historical Trend for "Searched Word"</h3>
+            <canvas id="trendChart"></canvas>
+            <button id="backToHomeButton" class="back-button">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                </svg>
+                Back to Trending Keywords
+            </button>
+        </div>
+    </main>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
